@@ -94,26 +94,30 @@ const Demo = () => {
         {/* Brows URL History */}
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
           {allArticles.map((item, index) => (
-            <div className="flex link_card items-center justify-between flex-none">
+            <div className="flex link_card items-center justify-between flex-wrap">
               <div
                 key={`link-${index}`}
                 onClick={() => setArticle(item)}
-                className="link_card w-full md:w-auto md:flex-1 md:flex md:items-center md:justify-between">
-                <div className="copy_btn" onClick={() => handleCopy(item.url)}>
-                  <img
-                    src={copied === item.url ? tick : copy}
-                    alt="copy"
-                    className="w-[40%] h-[40%] object-contain"
-                  />
+                className="flex items-center justify-between w-full">
+                <div className="flex items-center">
+                  <div
+                    className="copy_btn mr-2"
+                    onClick={() => handleCopy(item.url)}>
+                    <img
+                      src={copied === item.url ? tick : copy}
+                      alt="copy"
+                      className="w-5 h-5 object-contain"
+                    />
+                  </div>
+                  <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm">
+                    {item.url}
+                  </p>
                 </div>
-                <p className="flex font-satoshi text-blue-700 font-medium text-sm truncate md:mx-4 md:truncate">
-                  {item.url.slice(0, 35)}...
-                </p>
-              </div>
-              <div
-                onClick={() => handleRemove(index)}
-                className="font-bold cursor-pointer mt-2 md:mt-0">
-                X
+                <div
+                  onClick={() => handleRemove(index)}
+                  className="font-bold cursor-pointer">
+                  X
+                </div>
               </div>
             </div>
           ))}
