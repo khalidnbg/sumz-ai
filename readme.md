@@ -1,3 +1,3 @@
 # Build and Deploy Your Own ChatGPT AI SaaS Business with React
-![AI Summarizer]()
+![AI Summarizer]("https://github.com/khalidnbg/sumz-ai/blob/main/1.PNG?raw=true")
 
